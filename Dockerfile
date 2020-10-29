@@ -37,6 +37,9 @@ RUN rm -rf /vsix
 RUN  mkdir -p      /root/.local/share/code-server/User
 COPY settings.json /root/.local/share/code-server/User/settings.json
 
+RUN  mkdir -p      /vscode/data/User
+COPY settings.json /vscode/data/User/settings.json 
+
 WORKDIR /
 
 EXPOSE 8080
