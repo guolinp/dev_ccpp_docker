@@ -26,6 +26,7 @@ RUN cd /vsix && \
 
 RUN /vscode/bin/code-server                                     \
         --install-extension /vsix/cpptools-linux.vsix           \
+        --install-extension mrcrowl.hg                          \
         --install-extension formulahendry.code-runner           \
         --install-extension coenraads.bracket-pair-colorizer    \
         --install-extension vscode-icons-team.vscode-icons      \
