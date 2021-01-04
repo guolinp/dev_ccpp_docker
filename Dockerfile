@@ -22,7 +22,7 @@ RUN cd / && wget https://github.com/cdr/code-server/releases/download/v${VS_VERS
 RUN mkdir -p /vsix
 
 RUN cd /vsix && \
-    wget https://github.com/microsoft/vscode-cpptools/releases/download/1.1.2/cpptools-linux.vsix
+    wget https://github.com/microsoft/vscode-cpptools/releases/download/1.1.3/cpptools-linux.vsix
 
 RUN /vscode/bin/code-server                                     \
         --install-extension /vsix/cpptools-linux.vsix           \
