@@ -14,7 +14,7 @@ RUN apt-get -y install git mercurial build-essential gdb make astyle graphviz li
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/man/?? /usr/share/man/??_*
 
 # vscode
-ENV VS_VERSION 3.8.0
+ENV VS_VERSION 3.10.2
 ENV VS_PACKAGE code-server-${VS_VERSION}-linux-amd64
 RUN cd / && wget https://github.com/cdr/code-server/releases/download/v${VS_VERSION}/${VS_PACKAGE}.tar.gz  && \
             tar zxvf ${VS_PACKAGE}.tar.gz && mv ${VS_PACKAGE} vscode && rm -rf ${VS_PACKAGE}.tar.gz
@@ -22,7 +22,7 @@ RUN cd / && wget https://github.com/cdr/code-server/releases/download/v${VS_VERS
 RUN mkdir -p /vsix
 
 RUN cd /vsix && \
-    wget https://github.com/microsoft/vscode-cpptools/releases/download/1.1.3/cpptools-linux.vsix
+    wget https://github.com/microsoft/vscode-cpptools/releases/download/1.4.0/cpptools-linux.vsix
 
 RUN /vscode/bin/code-server                                     \
         --install-extension /vsix/cpptools-linux.vsix           \
